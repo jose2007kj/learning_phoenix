@@ -18,8 +18,9 @@ defmodule HouseInKeralaWeb.Router do
 
     get "/", PageController, :index
     get "/rentals/:search", RentalController, :index
-    get "/users", UserController, :index
-    get "users/:id", UserController, :show
+    #get "/users", UserController, :index
+    #get "users/:id", UserController, :show
+    resources "/user", UserController, only: [:index, :show, :new, :create]
 
   end
 

@@ -24,4 +24,10 @@ defmodule HouseInKerala.Accounts do
   def change_user(%User{} =user) do
     User.changeset(user, %{})
   end
+
+  def create_user(attrs \\ %{}) do
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert()
+  end
 end
